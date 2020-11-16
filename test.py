@@ -37,9 +37,11 @@ class Solution:
         for l in s:
             t = d[l]
             if res[-1]<t:
+                if len(res)>1 and res[-2]<t:
+                    return 0 # Некорректное число
                 res[-1]=t-res[-1]
             else:
                 res.append(t)
         return sum(res)         
 
-
+#print(Solution().romanToInt(input()))
